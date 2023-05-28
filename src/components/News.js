@@ -31,7 +31,7 @@ export class News extends Component {
       page: 1,
       totalResults: 0
     };
-    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - DailyStories`;
   }
 
   async componentDidMount() {
@@ -107,8 +107,8 @@ export class News extends Component {
 
   render() {
     return (
-      <div className="container my-3">
-        <h1 style={{ margin: "20px 0px" }}>NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
+      <div className="container my-3" style={{color: this.props.mode==='dark'?'white':'black'}}>
+        <h1  style={{ margin: "20px 0px" }}>DailyStories - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
         {this.state.loading && <Spinner />}
         
         <InfiniteScroll
@@ -135,7 +135,7 @@ export class News extends Component {
                     author={element.author}
                     date={element.publishedAt}
                     source={element.source.name}
-                  />
+                  mode= {this.props.mode}/>
                 </div>
               );
             })}
