@@ -9,7 +9,7 @@ export class NewsItem extends Component {
         <div className="card">
         <span className="position-absolute top-0 translate-middle badge rounded-pill bg-warning" style={{left: '85%', zIndex: 1}}>
           {source}
-          <span class="visually-hidden">unread messages</span>
+          <span className="visually-hidden">unread messages</span>
         </span>
         <img src={!imageUrl?"https://img.etimg.com/thumb/msid-100519842,width-1070,height-580,imgsize-829123,overlay-economictimes/photo.jpg":imageUrl} className="card-img-top" alt="https://static.vecteezy.com/system/resources/thumbnails/004/216/831/original/3d-world-news-background-loop-free-video.jpg"/>
         <div className="card-body">
