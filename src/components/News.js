@@ -50,46 +50,6 @@ export class News extends Component {
     this.props.setProgress(100);
   }
 
-  // async updateNews(){
-  //   this.props.setProgress(0);
-  //   this.setState({ loading: true });
-  //   let url = `https://newsapi.org/v2/top-headlines?country=${
-  //     this.props.country
-  //   }&category=${
-  //     this.props.category
-  //   }&apiKey=d0f6537f206e489a9d84599acc223c42&page=${
-  //     this.state.page
-  //   }&pageSize=${this.props.pageSize}`;
-  //   let data = await fetch(url);
-  //   let parseddata = await data.json();
-  //   this.setState({
-  //     loading: false,
-  //     page: this.state.page,
-  //     articles: parseddata.articles,
-  //   });
-  //   this.props.state.setProgress(100);
-  // }
-
-  // handlePrevClick = async () => {
-  //   this.setState({
-  //     page: this.state.page -1
-  //   })
-  //   this.updateNews()
-  // };
-
-  // handleNextClick = async () => {
-  //   this.setState({ loading: true });
-  //   if (
-  //     this.state.page + 1 >
-  //     Math.ceil(this.state.totalResults / this.props.pageSize)
-  //   ) {
-  //   } else {
-  //     this.setState({
-  //       page: this.state.page + 1
-  //     })
-  //     this.updateNews()
-  //   }
-  // };
 
   fetchMoreData = async() => {
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page +1}&pageSize=${this.props.pageSize}`;
@@ -143,26 +103,7 @@ export class News extends Component {
         </div>
         </InfiniteScroll>
         <div className="container d-flex justify-content-between">
-          {/* <button
-            disabled={this.state.page <= 1}
-            type="button"
-            onClick={this.handlePrevClick}
-            className="btn btn-dark"
-          >
-            {" "}
-            &larr; Previous
-          </button>
-          <button
-            disabled={
-              this.state.page + 1 >
-              Math.ceil(this.state.totalResults / this.props.pageSize)
-            }
-            type="button"
-            onClick={this.handleNextClick}
-            className="btn btn-dark"
-          >
-            Next &rarr;
-          </button> */}
+         
         </div>
       </div>
     );
